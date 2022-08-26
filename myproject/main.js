@@ -113,8 +113,8 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = 30;
-moon.position.setX(-10);
+moon.position.z = 25;
+moon.position.setX(-0);
 
 //sun
 const sunTexture = new THREE.TextureLoader().load("sun.jpg");
@@ -129,4 +129,4 @@ const sun = new THREE.Mesh(
 scene.add(sun);
 
 sun.position.z = 50;
-sun.position.setX(-10);
+sun.position.setX(-0);
