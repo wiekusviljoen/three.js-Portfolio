@@ -27,7 +27,7 @@ renderer.render(scene, camera);
 
 const geometry = new THREE.TorusGeometry(10, 3, 2, 100);
 const material = new THREE.MeshStandardMaterial({
-  color: 0x1199998297,
+  color: 0x812654999991,
 });
 
 const torus = new THREE.Mesh(geometry, material);
@@ -85,7 +85,7 @@ document.body.onscroll = moveCamera;
 function animate() {
   requestAnimationFrame(animate);
 
-  torus.rotation.z += 0.01;
+  //torus.rotation.z += 0.01;
 
   controls.update();
 
@@ -137,7 +137,7 @@ sun.position.z = 50;
 sun.position.setX(-0);
 
 //saturn
-const saturnTexture = new THREE.TextureLoader().load("saturn.jpg");
+const saturnTexture = new THREE.TextureLoader().load("texture sat.jpg");
 
 const saturn = new THREE.Mesh(
   new THREE.SphereGeometry(5, 32, 32),
