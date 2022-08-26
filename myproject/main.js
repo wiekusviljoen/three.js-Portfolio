@@ -57,7 +57,6 @@ scene.add(pointLight, ambientLight);
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 scene.add(torus);
