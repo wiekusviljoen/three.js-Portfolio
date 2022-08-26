@@ -6,17 +6,17 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.x += 3;
+    camera.position.x += 1;
   } else if (e.keyCode === 39) {
-    camera.position.x -= 3;
+    camera.position.x -= 1;
   } else if (e.keyCode === 38) {
-    camera.position.z += 3;
+    camera.position.z += 1;
   } else if (e.keyCode === 40) {
-    camera.position.z -= 3;
+    camera.position.z -= 1;
   } else if (e.keyCode === 32) {
-    camera.position.y -= 3;
+    camera.position.y -= 1;
   } else if (e.keyCode === 13) {
-    camera.position.y += 3;
+    camera.position.y += 1;
   }
 };
 
@@ -271,10 +271,10 @@ pluto.position.z = -250;
 pluto.position.setY(+35);
 
 //player
-const playerTexture = new THREE.TextureLoader().load("character.fbx");
+const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
 
 const player = new THREE.Mesh(
-  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.CylinderBufferGeometry(1, 3, 50, 200),
   new THREE.MeshStandardMaterial({
     map: playerTexture,
   })
@@ -284,3 +284,4 @@ scene.add(player);
 
 player.position.z = -300;
 player.position.setY(+35);
+player.rotateX(-250);
