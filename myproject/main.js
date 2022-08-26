@@ -43,7 +43,7 @@ scene.add(lightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 scene.add(torus);
-torus.position.z = 75;
+torus.position.z = -50;
 torus.position.setX(-0);
 torus.rotateX(-250);
 
@@ -55,13 +55,13 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(200));
+    .map(() => THREE.MathUtils.randFloatSpread(500));
 
   star.position.set(x, y, z);
   scene.add(star);
 }
 
-Array(4000).fill().forEach(addStar);
+Array(8000).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("space.jpg");
 scene.background = spaceTexture;
@@ -125,7 +125,7 @@ moon.position.setX(-0);
 const sunTexture = new THREE.TextureLoader().load("sun.jpg");
 
 const sun = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(50, 32, 32),
   new THREE.MeshStandardMaterial({
     map: sunTexture,
   })
@@ -133,7 +133,7 @@ const sun = new THREE.Mesh(
 
 scene.add(sun);
 
-sun.position.z = 50;
+sun.position.z = 200;
 sun.position.setX(-0);
 
 //saturn
@@ -148,5 +148,37 @@ const saturn = new THREE.Mesh(
 
 scene.add(saturn);
 
-saturn.position.z = 75;
+saturn.position.z = -50;
 saturn.position.setX(-0);
+
+//venus
+
+const venusTexture = new THREE.TextureLoader().load("venus.jpg");
+
+const venus = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: venusTexture,
+  })
+);
+
+scene.add(venus);
+
+venus.position.z = 50;
+venus.position.setX(-0);
+
+//mercury
+
+const mercuryTexture = new THREE.TextureLoader().load("mercury.png");
+
+const mercury = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: mercuryTexture,
+  })
+);
+
+scene.add(mercury);
+
+mercury.position.z = 80;
+mercury.position.setX(-0);
