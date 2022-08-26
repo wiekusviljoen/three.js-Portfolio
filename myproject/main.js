@@ -73,13 +73,13 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(500));
+    .map(() => THREE.MathUtils.randFloatSpread(1000));
 
   star.position.set(x, y, z);
   scene.add(star);
 }
 
-Array(4000).fill().forEach(addStar);
+Array(10000).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("space.jpg");
 scene.background = spaceTexture;
@@ -274,7 +274,7 @@ pluto.position.setY(+35);
 const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
 
 const player = new THREE.Mesh(
-  new THREE.CylinderBufferGeometry(1, 3, 50, 200),
+  // new THREE.CylinderBufferGeometry(1, 3, 50, 200),
   new THREE.MeshStandardMaterial({
     map: playerTexture,
   })
