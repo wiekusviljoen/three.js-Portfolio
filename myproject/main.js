@@ -233,3 +233,35 @@ scene.add(uranus);
 
 uranus.position.z = -110;
 uranus.position.setY(+25);
+
+//neptune
+
+const neptuneTexture = new THREE.TextureLoader().load("neptune.jpg");
+
+const neptune = new THREE.Mesh(
+  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: neptuneTexture,
+  })
+);
+
+scene.add(neptune);
+
+neptune.position.z = -180;
+neptune.position.setY(+30);
+
+//pluto
+
+const plutoTexture = new THREE.TextureLoader().load("pluto.jpg");
+
+const pluto = new THREE.Mesh(
+  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: plutoTexture,
+  })
+);
+
+scene.add(pluto);
+
+pluto.position.z = -250;
+pluto.position.setY(+35);
