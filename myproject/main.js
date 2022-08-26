@@ -4,6 +4,18 @@ import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
+document.onkeydown = function (e) {
+  if (e.keyCode === 37) {
+    camera.position.x -= 1;
+  } else if (e.keyCode === 39) {
+    camera.position.x += 1;
+  } else if (e.keyCode === 38) {
+    camera.position.z -= 1;
+  } else if (e.keyCode === 40) {
+    camera.position.z += 1;
+  }
+};
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
@@ -19,7 +31,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(300);
 
 renderer.render(scene, camera);
 
@@ -66,33 +78,7 @@ Array(4000).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load("space.jpg");
 scene.background = spaceTexture;
 
-function moveCamera() {
-  const t = document.body.getBoundingClientRect().top;
-  moon.rotation.x += 0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
-
-  earth.rotation.y += 0.01;
-  earth.rotation.z += 0.01;
-
-  camera.position.z = t * -0.01;
-  camera.position.x = t * -0.0002;
-  camera.position.y = t * -0.0002;
-}
-document.body.onscroll = moveCamera;
-
 //animate
-function animate() {
-  requestAnimationFrame(animate);
-
-  //torus.rotation.z += 0.01;
-
-  controls.update();
-
-  renderer.render(scene, camera);
-}
-
-animate();
 
 //earth
 
