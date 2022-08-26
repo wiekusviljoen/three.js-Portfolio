@@ -198,3 +198,19 @@ scene.add(mars);
 
 mars.position.z = -20;
 mars.position.setX(-0);
+
+//jupiter
+
+const jupiterTexture = new THREE.TextureLoader().load("jupiter.jpg");
+
+const jupiter = new THREE.Mesh(
+  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: jupiterTexture,
+  })
+);
+
+scene.add(jupiter);
+
+jupiter.position.z = -40;
+jupiter.position.setX(-0);
