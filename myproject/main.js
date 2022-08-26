@@ -6,13 +6,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.x -= 1;
+    camera.position.x -= 5;
   } else if (e.keyCode === 39) {
-    camera.position.x += 1;
+    camera.position.x += 5;
   } else if (e.keyCode === 38) {
-    camera.position.z -= 1;
+    camera.position.z -= 5;
   } else if (e.keyCode === 40) {
-    camera.position.z += 1;
+    camera.position.z += 5;
   }
 };
 
@@ -31,7 +31,9 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(300);
+camera.position.setZ(25);
+
+camera.position.setX(25);
 
 renderer.render(scene, camera);
 
@@ -263,3 +265,18 @@ scene.add(pluto);
 
 pluto.position.z = -250;
 pluto.position.setY(+35);
+
+//player
+const playerTexture = new THREE.TextureLoader().load("character.fbx");
+
+const player = new THREE.Mesh(
+  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: playerTexture,
+  })
+);
+
+scene.add(player);
+
+player.position.z = -300;
+player.position.setY(+35);
