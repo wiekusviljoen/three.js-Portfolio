@@ -21,7 +21,7 @@ document.onkeydown = function (e) {
 };
 
 const scene = new THREE.Scene();
-
+//camera
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -35,9 +35,9 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(25);
+camera.position.setZ(-50);
 
-camera.position.setX(25);
+camera.position.setX(-0);
 
 renderer.render(scene, camera);
 
