@@ -115,3 +115,18 @@ scene.add(moon);
 
 moon.position.z = 30;
 moon.position.setX(-10);
+
+//sun
+const sunTexture = new THREE.TextureLoader().load("sun.jpg");
+
+const sun = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: sunTexture,
+  })
+);
+
+scene.add(sun);
+
+sun.position.z = 50;
+sun.position.setX(-10);
