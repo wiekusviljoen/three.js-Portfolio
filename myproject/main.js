@@ -216,4 +216,20 @@ const jupiter = new THREE.Mesh(
 scene.add(jupiter);
 
 jupiter.position.z = -45;
-jupiter.position.setY(+15);
+jupiter.position.setY(+17);
+
+//Uranus
+
+const uranusTexture = new THREE.TextureLoader().load("uranus.jpg");
+
+const uranus = new THREE.Mesh(
+  new THREE.SphereGeometry(6, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: uranusTexture,
+  })
+);
+
+scene.add(uranus);
+
+uranus.position.z = -110;
+uranus.position.setY(+25);
