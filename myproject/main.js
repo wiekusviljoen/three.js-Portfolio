@@ -23,9 +23,11 @@ camera.position.setZ(30);
 
 renderer.render(scene, camera);
 
+//Saturn ring
+
 const geometry = new THREE.TorusGeometry(10, 3, 2, 100);
 const material = new THREE.MeshStandardMaterial({
-  color: 0xff6347,
+  color: 0x1199998297,
 });
 
 const torus = new THREE.Mesh(geometry, material);
@@ -43,6 +45,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 scene.add(torus);
 torus.position.z = 75;
 torus.position.setX(-0);
+torus.rotateX(-250);
 
 //Star
 function addStar() {
@@ -78,11 +81,10 @@ function moveCamera() {
 }
 document.body.onscroll = moveCamera;
 
+//animate
 function animate() {
   requestAnimationFrame(animate);
 
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
   torus.rotation.z += 0.01;
 
   controls.update();
