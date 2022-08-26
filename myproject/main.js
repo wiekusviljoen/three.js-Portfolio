@@ -43,7 +43,7 @@ scene.add(lightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 scene.add(torus);
-torus.position.z = -50;
+torus.position.z = -70;
 torus.position.setX(-0);
 torus.rotateX(-250);
 
@@ -61,7 +61,7 @@ function addStar() {
   scene.add(star);
 }
 
-Array(8000).fill().forEach(addStar);
+Array(4000).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("space.jpg");
 scene.background = spaceTexture;
@@ -94,7 +94,7 @@ function animate() {
 
 animate();
 
-//AVATAR
+//earth
 
 const earthTexture = new THREE.TextureLoader().load("earth.jpg");
 
@@ -148,7 +148,7 @@ const saturn = new THREE.Mesh(
 
 scene.add(saturn);
 
-saturn.position.z = -50;
+saturn.position.z = -70;
 saturn.position.setX(-0);
 
 //venus
@@ -182,3 +182,19 @@ scene.add(mercury);
 
 mercury.position.z = 80;
 mercury.position.setX(-0);
+
+//mars
+
+const marsTexture = new THREE.TextureLoader().load("mars.jpg");
+
+const mars = new THREE.Mesh(
+  new THREE.SphereGeometry(1.5, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: marsTexture,
+  })
+);
+
+scene.add(mars);
+
+mars.position.z = -20;
+mars.position.setX(-0);
