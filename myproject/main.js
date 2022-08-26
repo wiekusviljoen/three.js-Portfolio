@@ -109,6 +109,18 @@ scene.add(earth);
 earth.position.setY(+10);
 earth.position.z = +8;
 
+function earthAnimate() {
+  requestAnimationFrame(earthAnimate);
+
+  earth.rotation.y += 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+earthAnimate();
+
 //Moon
 const moonTexture = new THREE.TextureLoader().load("moon.jpg");
 
