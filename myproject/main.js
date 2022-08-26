@@ -13,6 +13,10 @@ document.onkeydown = function (e) {
     camera.position.z -= 5;
   } else if (e.keyCode === 40) {
     camera.position.z += 5;
+  } else if (e.keyCode === 32) {
+    camera.position.y -= 5;
+  } else if (e.keyCode === 13) {
+    camera.position.y += 5;
   }
 };
 
