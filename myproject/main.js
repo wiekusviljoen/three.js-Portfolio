@@ -99,12 +99,14 @@ animate();
 const earthTexture = new THREE.TextureLoader().load("earth.jpg");
 
 const earth = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(5, 32, 32),
 
   new THREE.MeshStandardMaterial({ map: earthTexture })
 );
 
 scene.add(earth);
+
+earth.position.setY(+15);
 
 //Moon
 const moonTexture = new THREE.TextureLoader().load("moon.jpg");
@@ -118,8 +120,8 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = 25;
-moon.position.setX(-0);
+moon.position.z = -500;
+moon.position.setY(-10);
 
 //sun
 const sunTexture = new THREE.TextureLoader().load("sun.jpg");
@@ -165,7 +167,7 @@ const venus = new THREE.Mesh(
 scene.add(venus);
 
 venus.position.z = 50;
-venus.position.setX(-0);
+venus.position.setY(+5);
 
 //mercury
 
