@@ -23,7 +23,7 @@ camera.position.setZ(30);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const geometry = new THREE.TorusGeometry(10, 3, 2, 100);
 const material = new THREE.MeshStandardMaterial({
   color: 0xff6347,
 });
@@ -40,6 +40,9 @@ const gridHelper = new THREE.GridHelper(200, 50);
 scene.add(lightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+scene.add(torus);
+torus.position.z = 75;
+torus.position.setX(-0);
 
 //Star
 function addStar() {
@@ -130,3 +133,18 @@ scene.add(sun);
 
 sun.position.z = 50;
 sun.position.setX(-0);
+
+//saturn
+const saturnTexture = new THREE.TextureLoader().load("saturn.jpg");
+
+const saturn = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: saturnTexture,
+  })
+);
+
+scene.add(saturn);
+
+saturn.position.z = 75;
+saturn.position.setX(-0);
