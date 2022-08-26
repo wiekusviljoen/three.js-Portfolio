@@ -6,13 +6,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.x -= 5;
-  } else if (e.keyCode === 39) {
     camera.position.x += 5;
+  } else if (e.keyCode === 39) {
+    camera.position.x -= 5;
   } else if (e.keyCode === 38) {
-    camera.position.z -= 5;
-  } else if (e.keyCode === 40) {
     camera.position.z += 5;
+  } else if (e.keyCode === 40) {
+    camera.position.z -= 5;
   } else if (e.keyCode === 32) {
     camera.position.y -= 5;
   } else if (e.keyCode === 13) {
