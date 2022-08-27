@@ -93,7 +93,7 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(1000));
+    .map(() => THREE.MathUtils.randFloatSpread(3000));
 
   star.position.set(x, y, z);
   scene.add(star);
@@ -145,8 +145,9 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = -500;
-moon.position.setY(-10);
+moon.position.z = +180;
+moon.position.setY(-1);
+moon.position.x = +5;
 
 //sun
 const sunTexture = new THREE.TextureLoader().load("sun.jpg");
