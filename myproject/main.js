@@ -23,10 +23,10 @@ document.onkeydown = function (e) {
 const scene = new THREE.Scene();
 //camera
 const camera = new THREE.PerspectiveCamera(
-  75,
+  60,
   window.innerWidth / window.innerHeight,
   0.1,
-  1000
+  20000
 );
 camera.position.set(3, 5, 3);
 camera.lookAt(0, 0, 0);
@@ -274,14 +274,17 @@ pluto.position.setY(+35);
 const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
 
 const player = new THREE.Mesh(
-  new THREE.CylinderBufferGeometry(1, 3, 50, 200),
-  new THREE.MeshStandardMaterial({
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshPhongMaterial({
     map: playerTexture,
   })
 );
 
-scene.add(player);
+player.position.set(3, 0, 0);
+player.castShadow = true;
+player.receiveShadow = true;
 
-player.position.z = -300;
-player.position.setY(+35);
-player.rotateX(-250);
+let player2 = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+player2.setFromObject(player);
+
+scene.add(player);
