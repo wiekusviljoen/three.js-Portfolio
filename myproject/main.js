@@ -280,12 +280,12 @@ pluto.position.setY(+35);
 const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
 
 const player = new THREE.Mesh(
-  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.BoxGeometry(1, 5, 0),
   new THREE.MeshPhongMaterial({
     map: playerTexture,
   })
 );
-
+player.rotateZ(-900);
 player.position.set(3, 0, 0);
 player.castShadow = true;
 player.receiveShadow = true;
