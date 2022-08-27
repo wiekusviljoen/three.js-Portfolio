@@ -30,9 +30,9 @@ const camera = new THREE.PerspectiveCamera(
   0.5,
   50000
 );
-camera.position.setY(+10);
-camera.position.z = +5;
-camera.position.x = +110;
+camera.position.setY(+30);
+camera.position.z = 300;
+camera.position.x = +150;
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
