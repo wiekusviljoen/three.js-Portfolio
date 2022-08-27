@@ -4,19 +4,21 @@ import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
+//model animation
+
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    player3.position.x += 1;
+    camera.position.x -= 1;
   } else if (e.keyCode === 39) {
-    player3.position.x -= 1;
+    camera.position.x += 1;
   } else if (e.keyCode === 38) {
-    player3.position.z += 1;
+    camera.position.z -= 1;
   } else if (e.keyCode === 40) {
-    player3.position.z -= 1;
+    camera.position.z += 1;
   } else if (e.keyCode === 32) {
-    player3.position.y -= 1;
+    camera.position.y -= 1;
   } else if (e.keyCode === 13) {
-    player3.position.y += 1;
+    camera.position.y += 1;
   }
 };
 
@@ -28,8 +30,8 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   5000
 );
-camera.position.y = 5;
-camera.position.z = 5;
+camera.position.y = 50;
+camera.position.z = 50;
 camera.position.x = 0;
 
 const renderer = new THREE.WebGLRenderer({
@@ -62,7 +64,8 @@ scene.add(pointLight, ambientLight);
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
 
-var controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
+
 scene.add(torus);
 torus.position.z = -70;
 torus.position.setY(+20);
@@ -309,9 +312,12 @@ player4.setFromObject(player3);
 scene.add(player3);
 
 //ball
+
+const ball1Texture = new THREE.TextureLoader().load("deathstar.jpg");
+
 const ball1 = new THREE.Mesh(
   new THREE.SphereGeometry(1),
-  new THREE.MeshPhongMaterial({ color: 0xff1493 })
+  new THREE.MeshPhongMaterial({ map: ball1Texture })
 );
 
 ball1.position.set(0, 0, 0);
