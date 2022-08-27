@@ -483,3 +483,22 @@ ring5.receiveShadow = true;
 ring5.rotateX(-300);
 
 scene.add(ring5);
+
+//ring 6
+
+const ring6Texture = new THREE.TextureLoader().load("saturn.jpg");
+
+const ring6 = new THREE.Mesh(
+  new THREE.TorusGeometry(650, 0.1, 2, 100),
+  new THREE.MeshPhongMaterial({ map: ring6Texture })
+);
+
+ring6.position.setY(+20);
+ring6.position.z = 200;
+
+ring6.castShadow = true;
+ring6.receiveShadow = true;
+
+ring6.rotateX(-300);
+
+scene.add(ring6);
