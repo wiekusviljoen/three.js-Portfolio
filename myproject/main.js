@@ -118,8 +118,8 @@ const earth = new THREE.Mesh(
 
 scene.add(earth);
 
-earth.position.setY(+10);
-earth.position.z = +100;
+earth.position.setY(-3);
+earth.position.z = +150;
 
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
@@ -240,7 +240,7 @@ mercuryAnimate();
 scene.add(mercury);
 
 mercury.position.z = 50;
-mercury.position.setX(+100);
+mercury.position.setX(+50);
 
 //mars
 
@@ -267,7 +267,7 @@ marsAnimate();
 
 scene.add(mars);
 
-mars.position.z = +150;
+mars.position.z = +153;
 
 mars.position.setX(-50);
 
@@ -325,9 +325,9 @@ uranusAnimate();
 
 scene.add(uranus);
 
-uranus.position.z = 500;
-uranus.position.setY(+25);
-uranus.position.setX(-100);
+uranus.position.z = 400;
+uranus.position.y = -10;
+uranus.position.setX(-200);
 //neptune
 
 const neptuneTexture = new THREE.TextureLoader().load("neptune.jpg");
@@ -508,7 +508,7 @@ function animation2() {
 const ringTexture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring = new THREE.Mesh(
-  new THREE.TorusGeometry(100, 0.1, 2, 100),
+  new THREE.TorusGeometry(70, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ringTexture })
 );
 
@@ -537,7 +537,7 @@ scene.add(ring);
 const ring2Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring2 = new THREE.Mesh(
-  new THREE.TorusGeometry(150, 0.1, 2, 100),
+  new THREE.TorusGeometry(100, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring2Texture })
 );
 
@@ -566,7 +566,7 @@ scene.add(ring2);
 const ring4Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring4 = new THREE.Mesh(
-  new THREE.TorusGeometry(192, 0.1, 2, 100),
+  new THREE.TorusGeometry(160, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring4Texture })
 );
 
@@ -596,7 +596,7 @@ scene.add(ring4);
 const ring3Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring3 = new THREE.Mesh(
-  new THREE.TorusGeometry(235.5, 0.1, 2, 100),
+  new THREE.TorusGeometry(150.5, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring3Texture })
 );
 
@@ -625,11 +625,11 @@ scene.add(ring3);
 const ring5Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring5 = new THREE.Mesh(
-  new THREE.TorusGeometry(317, 0.1, 2, 100),
+  new THREE.TorusGeometry(180, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring5Texture })
 );
 
-ring5.position.setY(+20);
+ring5.position.setY(+13);
 ring5.position.z = 0;
 
 ring5.castShadow = true;
@@ -656,11 +656,11 @@ scene.add(ring5);
 const ring6Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring6 = new THREE.Mesh(
-  new THREE.TorusGeometry(650, 0.1, 2, 100),
+  new THREE.TorusGeometry(385, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring6Texture })
 );
 
-ring6.position.setY(+20);
+ring6.position.setY(5);
 ring6.position.z = 0;
 
 ring6.castShadow = true;
@@ -687,11 +687,11 @@ scene.add(ring6);
 const ring7Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring7 = new THREE.Mesh(
-  new THREE.TorusGeometry(1005, 0.1, 2, 100),
+  new THREE.TorusGeometry(510, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring7Texture })
 );
 
-ring7.position.setY(+25);
+ring7.position.setY(+35);
 ring7.position.z = 0;
 
 ring7.castShadow = true;
@@ -718,7 +718,7 @@ scene.add(ring7);
 const ring8Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring8 = new THREE.Mesh(
-  new THREE.TorusGeometry(1195, 0.1, 2, 100),
+  new THREE.TorusGeometry(445, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring8Texture })
 );
 
