@@ -3,18 +3,20 @@ import "./style.css";
 import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { LoopRepeat } from "three";
+import { meshgrid } from "@tensorflow/tfjs";
 
 //model animation
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.z -= 1;
-  } else if (e.keyCode === 39) {
     camera.position.z += 1;
+  } else if (e.keyCode === 39) {
+    camera.position.z -= 1;
   } else if (e.keyCode === 38) {
-    camera.position.x += 1;
-  } else if (e.keyCode === 40) {
     camera.position.x -= 1;
+  } else if (e.keyCode === 40) {
+    camera.position.x += 1;
   } else if (e.keyCode === 32) {
     camera.position.y += 1;
   } else if (e.keyCode === 13) {
@@ -66,6 +68,17 @@ const gridHelper = new THREE.GridHelper(200, 50);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
+function animate1() {
+  requestAnimationFrame(animate1);
+  scene.rotation.y -= 0.001;
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+animate1(scene);
+
+window.requestAnimationFrame(animate1);
+
 scene.add(torus);
 
 torus.rotateX(-250);
@@ -88,7 +101,7 @@ function addStar() {
   scene.add(star);
 }
 
-Array(5000).fill().forEach(addStar);
+Array(100).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("space.jpg");
 scene.background = spaceTexture;
@@ -152,6 +165,18 @@ scene.add(sun);
 sun.position.z = 200;
 sun.position.setX(-0);
 
+function sunAnimate() {
+  requestAnimationFrame(sunAnimate);
+
+  sun.rotation.y -= 0.0001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+sunAnimate();
+
 //saturn
 const saturnTexture = new THREE.TextureLoader().load("texture sat.jpg");
 
@@ -178,6 +203,18 @@ const venus = new THREE.Mesh(
   })
 );
 
+function venusAnimate() {
+  requestAnimationFrame(venusAnimate);
+
+  venus.rotation.y += 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+venusAnimate();
+
 scene.add(venus);
 
 venus.position.z = +350;
@@ -192,6 +229,18 @@ const mercury = new THREE.Mesh(
     map: mercuryTexture,
   })
 );
+
+function mercuryAnimate() {
+  requestAnimationFrame(mercuryAnimate);
+
+  mercury.rotation.y += 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+mercuryAnimate();
 
 scene.add(mercury);
 
@@ -208,6 +257,18 @@ const mars = new THREE.Mesh(
     map: marsTexture,
   })
 );
+
+function marsAnimate() {
+  requestAnimationFrame(marsAnimate);
+
+  mars.rotation.y += 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+marsAnimate();
 
 scene.add(mars);
 
@@ -226,6 +287,18 @@ const jupiter = new THREE.Mesh(
   })
 );
 
+function jupiterAnimate() {
+  requestAnimationFrame(jupiterAnimate);
+
+  jupiter.rotation.y += 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+jupiterAnimate();
+
 scene.add(jupiter);
 
 jupiter.position.z = +500;
@@ -243,6 +316,18 @@ const uranus = new THREE.Mesh(
   })
 );
 
+function uranusAnimate() {
+  requestAnimationFrame(uranusAnimate);
+
+  uranus.rotation.y += 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+uranusAnimate();
+
 scene.add(uranus);
 
 uranus.position.z = 100;
@@ -259,6 +344,18 @@ const neptune = new THREE.Mesh(
   })
 );
 
+function neptuneAnimate() {
+  requestAnimationFrame(neptuneAnimate);
+
+  neptune.rotation.y -= 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+neptuneAnimate();
+
 scene.add(neptune);
 
 neptune.position.z = -1000;
@@ -274,6 +371,18 @@ const pluto = new THREE.Mesh(
     map: plutoTexture,
   })
 );
+
+function plutoAnimate() {
+  requestAnimationFrame(plutoAnimate);
+
+  pluto.rotation.y -= 0.01;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+plutoAnimate();
 
 scene.add(pluto);
 
@@ -399,6 +508,8 @@ function animation2() {
   ball1.material.color = new THREE.Color(Math.random() * 0xfffffff);
 }
 
+//ring
+
 const ringTexture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring = new THREE.Mesh(
@@ -411,6 +522,18 @@ ring.castShadow = true;
 ring.receiveShadow = true;
 
 ring.rotateX(-300);
+
+function ringAnimate() {
+  requestAnimationFrame(ringAnimate);
+
+  ring.rotation.z -= 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ringAnimate();
 
 scene.add(ring);
 
@@ -428,6 +551,18 @@ ring2.castShadow = true;
 ring2.receiveShadow = true;
 
 ring2.rotateX(-300);
+
+function ring2Animate() {
+  requestAnimationFrame(ring2Animate);
+
+  ring2.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring2Animate();
 
 scene.add(ring2);
 
@@ -447,6 +582,18 @@ ring4.receiveShadow = true;
 
 ring4.rotateX(-300);
 
+function ring4Animate() {
+  requestAnimationFrame(ring4Animate);
+
+  ring4.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring4Animate();
+
 scene.add(ring4);
 
 //ring3
@@ -463,6 +610,18 @@ ring3.castShadow = true;
 ring3.receiveShadow = true;
 
 ring3.rotateX(-300);
+
+function ring3Animate() {
+  requestAnimationFrame(ring3Animate);
+
+  ring3.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring3Animate();
 
 scene.add(ring3);
 
@@ -483,6 +642,18 @@ ring5.receiveShadow = true;
 
 ring5.rotateX(-300);
 
+function ring5Animate() {
+  requestAnimationFrame(ring5Animate);
+
+  ring5.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring5Animate();
+
 scene.add(ring5);
 
 //ring 6
@@ -501,6 +672,18 @@ ring6.castShadow = true;
 ring6.receiveShadow = true;
 
 ring6.rotateX(-300);
+
+function ring6Animate() {
+  requestAnimationFrame(ring6Animate);
+
+  ring6.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring6Animate();
 
 scene.add(ring6);
 
@@ -521,6 +704,18 @@ ring7.receiveShadow = true;
 
 ring7.rotateX(-300);
 
+function ring7Animate() {
+  requestAnimationFrame(ring7Animate);
+
+  ring7.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring7Animate();
+
 scene.add(ring7);
 
 //ring8
@@ -528,7 +723,7 @@ scene.add(ring7);
 const ring8Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring8 = new THREE.Mesh(
-  new THREE.TorusGeometry(1195, 0.5, 2, 100),
+  new THREE.TorusGeometry(1195, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring8Texture })
 );
 
@@ -539,6 +734,18 @@ ring8.receiveShadow = true;
 
 ring8.rotateX(-300);
 
+function ring8Animate() {
+  requestAnimationFrame(ring8Animate);
+
+  ring8.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring8Animate();
+
 scene.add(ring8);
 
 // ring 9
@@ -546,7 +753,7 @@ scene.add(ring8);
 const ring9Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring9 = new THREE.Mesh(
-  new THREE.TorusGeometry(1530, 0.5, 2, 100),
+  new THREE.TorusGeometry(1530, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring9Texture })
 );
 
@@ -556,5 +763,17 @@ ring9.castShadow = true;
 ring9.receiveShadow = true;
 
 ring9.rotateX(-300);
+
+function ring9Animate() {
+  requestAnimationFrame(ring9Animate);
+
+  ring9.rotation.z += 0.001;
+
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+
+ring9Animate();
 
 scene.add(ring9);
