@@ -212,7 +212,7 @@ const mars = new THREE.Mesh(
 scene.add(mars);
 
 mars.position.z = +150;
-mars.position.setY(+13);
+
 mars.position.setX(230);
 
 //jupiter
@@ -228,8 +228,9 @@ const jupiter = new THREE.Mesh(
 
 scene.add(jupiter);
 
-jupiter.position.z = -45;
+jupiter.position.z = +500;
 jupiter.position.setY(+17);
+jupiter.position.setX(+100);
 
 //Uranus
 
@@ -428,3 +429,57 @@ ring2.receiveShadow = true;
 ring2.rotateX(-300);
 
 scene.add(ring2);
+
+//ring 4
+
+const ring4Texture = new THREE.TextureLoader().load("saturn.jpg");
+
+const ring4 = new THREE.Mesh(
+  new THREE.TorusGeometry(192, 0.1, 2, 100),
+  new THREE.MeshPhongMaterial({ map: ring4Texture })
+);
+
+ring4.position.setY(+5);
+ring4.position.z = 200;
+ring4.castShadow = true;
+ring4.receiveShadow = true;
+
+ring4.rotateX(-300);
+
+scene.add(ring4);
+
+//ring3
+
+const ring3Texture = new THREE.TextureLoader().load("saturn.jpg");
+
+const ring3 = new THREE.Mesh(
+  new THREE.TorusGeometry(235.5, 0.1, 2, 100),
+  new THREE.MeshPhongMaterial({ map: ring3Texture })
+);
+
+ring3.position.z = 200;
+ring3.castShadow = true;
+ring3.receiveShadow = true;
+
+ring3.rotateX(-300);
+
+scene.add(ring3);
+
+//ring 5
+
+const ring5Texture = new THREE.TextureLoader().load("saturn.jpg");
+
+const ring5 = new THREE.Mesh(
+  new THREE.TorusGeometry(317, 0.1, 2, 100),
+  new THREE.MeshPhongMaterial({ map: ring5Texture })
+);
+
+ring5.position.setY(+20);
+ring5.position.z = 200;
+
+ring5.castShadow = true;
+ring5.receiveShadow = true;
+
+ring5.rotateX(-300);
+
+scene.add(ring5);
