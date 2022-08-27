@@ -327,7 +327,7 @@ scene.add(uranus);
 
 uranus.position.z = 400;
 uranus.position.y = -10;
-uranus.position.setX(-200);
+uranus.position.setX(-250);
 //neptune
 
 const neptuneTexture = new THREE.TextureLoader().load("neptune.jpg");
@@ -353,8 +353,8 @@ neptuneAnimate();
 
 scene.add(neptune);
 
-neptune.position.z = +5000;
-neptune.position.setY(+800);
+neptune.position.z = +550;
+neptune.position.x = -100;
 
 //pluto
 
@@ -718,7 +718,7 @@ scene.add(ring7);
 const ring8Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring8 = new THREE.Mesh(
-  new THREE.TorusGeometry(445, 0.1, 2, 100),
+  new THREE.TorusGeometry(470, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring8Texture })
 );
 
@@ -748,11 +748,12 @@ scene.add(ring8);
 const ring9Texture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring9 = new THREE.Mesh(
-  new THREE.TorusGeometry(1530, 0.1, 2, 100),
+  new THREE.TorusGeometry(560, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ring9Texture })
 );
 
 ring9.position.z = 0;
+ring9.position.y = +13;
 
 ring9.castShadow = true;
 ring9.receiveShadow = true;
