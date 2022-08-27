@@ -81,9 +81,9 @@ scene.add(torus);
 
 torus.rotateX(-250);
 
-torus.position.z = -450;
+torus.position.z = -350;
 torus.position.setY(+13);
-torus.position.setX(+600);
+torus.position.setX(+160);
 
 //Star
 function addStar() {
@@ -183,9 +183,9 @@ const saturn = new THREE.Mesh(
 );
 
 scene.add(saturn);
-saturn.position.z = -450;
+saturn.position.z = -350;
 saturn.position.setY(+13);
-saturn.position.setX(+600);
+saturn.position.setX(+160);
 
 //venus
 
@@ -325,9 +325,9 @@ uranusAnimate();
 
 scene.add(uranus);
 
-uranus.position.z = -100;
+uranus.position.z = 500;
 uranus.position.setY(+25);
-uranus.position.setX(-1000);
+uranus.position.setX(-100);
 //neptune
 
 const neptuneTexture = new THREE.TextureLoader().load("neptune.jpg");
