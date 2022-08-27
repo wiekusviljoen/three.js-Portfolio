@@ -23,13 +23,14 @@ document.onkeydown = function (e) {
 const scene = new THREE.Scene();
 //camera
 const camera = new THREE.PerspectiveCamera(
-  60,
+  45,
   window.innerWidth / window.innerHeight,
   0.1,
-  20000
+  5000
 );
-camera.position.set(3, 5, 3);
-camera.lookAt(0, 0, 0);
+camera.position.y = 5;
+camera.position.z = 5;
+camera.position.x = 0;
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -41,6 +42,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 
 document.body.appendChild(renderer.domElement);
+
+//Controls
 
 //Saturn ring
 
@@ -59,7 +62,7 @@ scene.add(pointLight, ambientLight);
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+var controls = new OrbitControls(camera, renderer.domElement);
 scene.add(torus);
 torus.position.z = -70;
 torus.position.setY(+20);
