@@ -398,3 +398,28 @@ function animation2() {
   ball1.material.opacity = 0.5;
   ball1.material.color = new THREE.Color(Math.random() * 0xfffffff);
 }
+
+//orbit lines
+
+const geometrying = new THREE.TorusGeometry(10, 3, 2, 100);
+const materialing = new THREE.MeshStandardMaterial({
+  color: 0x812654999991,
+});
+
+const orbitline = new THREE.Mesh(geometry, material);
+
+const pointingLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(20, 20, 20);
+const ambientingLight = new THREE.AmbientLight(0xffffff);
+scene.add(pointingLight, ambientingLight);
+
+const lightingHelper = new THREE.PointLightHelper(pointLight);
+const gridingHelper = new THREE.GridHelper(200, 50);
+
+const controlsing = new OrbitControls(camera, renderer.domElement);
+
+scene.add(orbitline);
+
+torus.position.z = +450;
+torus.position.setY(+13);
+torus.position.setX(-600);
