@@ -277,8 +277,9 @@ const pluto = new THREE.Mesh(
 
 scene.add(pluto);
 
-pluto.position.z = -250;
+pluto.position.z = -1250;
 pluto.position.setY(+35);
+pluto.position.x = +500;
 
 //satalite arm1
 const playerTexture = new THREE.TextureLoader().load("solarpanel.jpg");
@@ -539,3 +540,21 @@ ring8.receiveShadow = true;
 ring8.rotateX(-300);
 
 scene.add(ring8);
+
+// ring 9
+
+const ring9Texture = new THREE.TextureLoader().load("saturn.jpg");
+
+const ring9 = new THREE.Mesh(
+  new THREE.TorusGeometry(1530, 0.5, 2, 100),
+  new THREE.MeshPhongMaterial({ map: ring9Texture })
+);
+
+ring9.position.z = 200;
+
+ring9.castShadow = true;
+ring9.receiveShadow = true;
+
+ring9.rotateX(-300);
+
+scene.add(ring9);
