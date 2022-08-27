@@ -35,11 +35,8 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(-50);
 
-camera.position.setX(-0);
-
-renderer.render(scene, camera);
+document.body.appendChild(renderer.domElement);
 
 //Saturn ring
 
@@ -273,7 +270,7 @@ pluto.position.setY(+35);
 const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
 
 const player = new THREE.Mesh(
-  // new THREE.CylinderBufferGeometry(1, 3, 50, 200),
+  new THREE.CylinderBufferGeometry(1, 3, 50, 200),
   new THREE.MeshStandardMaterial({
     map: playerTexture,
   })
