@@ -280,13 +280,14 @@ pluto.position.setY(+35);
 const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
 
 const player = new THREE.Mesh(
-  new THREE.BoxGeometry(1, 5, 0),
+  new THREE.BoxGeometry(1, 3, 0),
   new THREE.MeshPhongMaterial({
     map: playerTexture,
   })
 );
-player.rotateZ(-900);
-player.position.set(3, 0, 0);
+player.rotateX(-500);
+player.rotateZ(-900.05);
+player.position.set(2.5, 0, 0);
 player.castShadow = true;
 player.receiveShadow = true;
 
@@ -294,6 +295,24 @@ let player2 = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
 player2.setFromObject(player);
 
 scene.add(player);
+
+//sat arm2
+
+const satarmTexture = new THREE.TextureLoader().load("rocket.jpg");
+
+const satarm = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 3, 0),
+  new THREE.MeshPhongMaterial({
+    map: satarmTexture,
+  })
+);
+satarm.rotateX(-500);
+satarm.rotateZ(-900.05);
+satarm.position.set(-2.5, 0, 0);
+satarm.castShadow = true;
+satarm.receiveShadow = true;
+
+scene.add(satarm);
 
 //playermain
 
@@ -308,8 +327,6 @@ player3.receiveShadow = true;
 
 let player4 = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
 player4.setFromObject(player3);
-
-scene.add(player3);
 
 //ball
 
