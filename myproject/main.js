@@ -30,7 +30,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   5000
 );
-camera.position.y = 50;
+camera.position.y = 400;
 camera.position.z = 50;
 camera.position.x = 0;
 
@@ -399,10 +399,10 @@ function animation2() {
   ball1.material.color = new THREE.Color(Math.random() * 0xfffffff);
 }
 
-const ringTexture = new THREE.TextureLoader().load("");
+const ringTexture = new THREE.TextureLoader().load("saturn.jpg");
 
 const ring = new THREE.Mesh(
-  new THREE.TorusGeometry(100, 1, 2, 100),
+  new THREE.TorusGeometry(100, 0.1, 2, 100),
   new THREE.MeshPhongMaterial({ map: ringTexture })
 );
 
