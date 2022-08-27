@@ -6,17 +6,17 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    ball1.position.x += 1;
+    player3.position.x += 1;
   } else if (e.keyCode === 39) {
-    ball1.position.x -= 1;
+    player3.position.x -= 1;
   } else if (e.keyCode === 38) {
-    ball1.position.z += 1;
+    player3.position.z += 1;
   } else if (e.keyCode === 40) {
-    ball1.position.z -= 1;
+    player3.position.z -= 1;
   } else if (e.keyCode === 32) {
-    ball1.position.y -= 1;
+    player3.position.y -= 1;
   } else if (e.keyCode === 13) {
-    ball1.position.y += 1;
+    player3.position.y += 1;
   }
 };
 
