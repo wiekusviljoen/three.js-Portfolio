@@ -68,7 +68,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate1() {
   requestAnimationFrame(animate1);
-  scene.rotation.y -= 0.001;
+  scene.rotation.y += 0.001;
   controls.update();
 
   renderer.render(scene, camera);
@@ -124,7 +124,7 @@ earth.position.z = +150;
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
 
-  earth.rotation.y += 0.01;
+  earth.rotation.y += 0.05;
 
   controls.update();
 
@@ -163,7 +163,7 @@ scene.add(sun);
 function sunAnimate() {
   requestAnimationFrame(sunAnimate);
 
-  sun.rotation.y -= 0.0001;
+  sun.rotation.y -= 0.002;
 
   controls.update();
 
