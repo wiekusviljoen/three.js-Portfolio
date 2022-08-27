@@ -276,8 +276,8 @@ scene.add(pluto);
 pluto.position.z = -250;
 pluto.position.setY(+35);
 
-//player
-const playerTexture = new THREE.TextureLoader().load("rocket.jpg");
+//satalite arm1
+const playerTexture = new THREE.TextureLoader().load("solarpanel.jpg");
 
 const player = new THREE.Mesh(
   new THREE.BoxGeometry(1, 3, 0),
@@ -298,7 +298,7 @@ scene.add(player);
 
 //sat arm2
 
-const satarmTexture = new THREE.TextureLoader().load("rocket.jpg");
+const satarmTexture = new THREE.TextureLoader().load("solarpanel.jpg");
 
 const satarm = new THREE.Mesh(
   new THREE.BoxGeometry(1, 3, 0),
