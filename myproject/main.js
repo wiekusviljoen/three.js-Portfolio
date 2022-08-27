@@ -30,8 +30,8 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   5000
 );
-camera.position.y = 400;
-camera.position.z = 50;
+camera.position.y = 1000;
+camera.position.z = 0;
 camera.position.x = 0;
 
 const renderer = new THREE.WebGLRenderer({
@@ -181,8 +181,6 @@ const venus = new THREE.Mesh(
 scene.add(venus);
 
 venus.position.z = +350;
-
-venus.position.setY(+10);
 
 //mercury
 
@@ -413,3 +411,20 @@ ring.receiveShadow = true;
 ring.rotateX(-300);
 
 scene.add(ring);
+
+//ring 2
+
+const ring2Texture = new THREE.TextureLoader().load("saturn.jpg");
+
+const ring2 = new THREE.Mesh(
+  new THREE.TorusGeometry(150, 0.1, 2, 100),
+  new THREE.MeshPhongMaterial({ map: ring2Texture })
+);
+
+ring2.position.z = 200;
+ring2.castShadow = true;
+ring2.receiveShadow = true;
+
+ring2.rotateX(-300);
+
+scene.add(ring2);
