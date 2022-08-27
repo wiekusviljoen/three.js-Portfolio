@@ -288,3 +288,46 @@ let player2 = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
 player2.setFromObject(player);
 
 scene.add(player);
+
+//playermain
+
+const player3 = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshPhongMaterial({ color: 0x0000ff })
+);
+
+player3.position.set(-3, 0, 0);
+player3.castShadow = true;
+player3.receiveShadow = true;
+
+let player4 = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+player4.setFromObject(player3);
+
+scene.add(player3);
+
+//ball
+const ball1 = new THREE.Mesh(
+  new THREE.SphereGeometry(1),
+  new THREE.MeshPhongMaterial({ color: 0xff1493 })
+);
+
+ball1.position.set(0, 0, 0);
+ball1.castShadow = true;
+ball1.receiveShadow = true;
+
+let ball1BB = new THREE.Sphere(ball1.position, 1);
+
+scene.add(ball1);
+
+// animate balls and blocks
+
+animate();
+
+function animate() {
+  player4.copy(player3.geometry.boundingBox).applyMatrix4(player3.matrixWorld);
+
+  checkCollisions();
+
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
