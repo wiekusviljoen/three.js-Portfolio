@@ -512,7 +512,7 @@ const ring = new THREE.Mesh(
   new THREE.MeshPhongMaterial({ map: ringTexture })
 );
 
-ring.position.z = 200;
+ring.position.z = 0;
 ring.castShadow = true;
 ring.receiveShadow = true;
 
@@ -541,7 +541,7 @@ const ring2 = new THREE.Mesh(
   new THREE.MeshPhongMaterial({ map: ring2Texture })
 );
 
-ring2.position.z = 200;
+ring2.position.z = 0;
 ring2.castShadow = true;
 ring2.receiveShadow = true;
 
@@ -571,7 +571,7 @@ const ring4 = new THREE.Mesh(
 );
 
 ring4.position.setY(+5);
-ring4.position.z = 200;
+ring4.position.z = 0;
 ring4.castShadow = true;
 ring4.receiveShadow = true;
 
@@ -600,7 +600,7 @@ const ring3 = new THREE.Mesh(
   new THREE.MeshPhongMaterial({ map: ring3Texture })
 );
 
-ring3.position.z = 200;
+ring3.position.z = 0;
 ring3.castShadow = true;
 ring3.receiveShadow = true;
 
@@ -630,7 +630,7 @@ const ring5 = new THREE.Mesh(
 );
 
 ring5.position.setY(+20);
-ring5.position.z = 200;
+ring5.position.z = 0;
 
 ring5.castShadow = true;
 ring5.receiveShadow = true;
@@ -661,7 +661,7 @@ const ring6 = new THREE.Mesh(
 );
 
 ring6.position.setY(+20);
-ring6.position.z = 200;
+ring6.position.z = 0;
 
 ring6.castShadow = true;
 ring6.receiveShadow = true;
@@ -692,7 +692,7 @@ const ring7 = new THREE.Mesh(
 );
 
 ring7.position.setY(+25);
-ring7.position.z = 200;
+ring7.position.z = 0;
 
 ring7.castShadow = true;
 ring7.receiveShadow = true;
@@ -722,7 +722,7 @@ const ring8 = new THREE.Mesh(
   new THREE.MeshPhongMaterial({ map: ring8Texture })
 );
 
-ring8.position.z = 200;
+ring8.position.z = 0;
 
 ring8.castShadow = true;
 ring8.receiveShadow = true;
@@ -752,7 +752,7 @@ const ring9 = new THREE.Mesh(
   new THREE.MeshPhongMaterial({ map: ring9Texture })
 );
 
-ring9.position.z = 200;
+ring9.position.z = 0;
 
 ring9.castShadow = true;
 ring9.receiveShadow = true;
