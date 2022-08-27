@@ -6,17 +6,17 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.x += 1;
+    ball1.position.x += 1;
   } else if (e.keyCode === 39) {
-    camera.position.x -= 1;
+    ball1.position.x -= 1;
   } else if (e.keyCode === 38) {
-    camera.position.z += 1;
+    ball1.position.z += 1;
   } else if (e.keyCode === 40) {
-    camera.position.z -= 1;
+    ball1.position.z -= 1;
   } else if (e.keyCode === 32) {
-    camera.position.y -= 1;
+    ball1.position.y -= 1;
   } else if (e.keyCode === 13) {
-    camera.position.y += 1;
+    ball1.position.y += 1;
   }
 };
 
@@ -330,4 +330,40 @@ function animate() {
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
+}
+
+//check collisions
+
+function checkCollisions() {
+  if (player4.intersectsBox(player2)) {
+    animation1();
+  } else {
+    player.material.opacity = 1.0;
+  }
+
+  if (player4.intersectsSphere(ball1BB)) {
+    animation2();
+  } else {
+    ball1.material.opacity = 1.0;
+  }
+
+  if (player4.containsBox(player2)) {
+    player3.scale.y = 3;
+  } else {
+    player3.scale.y = 1;
+  }
+}
+
+//animation block and balls
+
+function animation1() {
+  player.material.transparent = true;
+  player.material.opacity = 0.5;
+  player.material.color = new THREE.Color(Math.random() * 0xfffffff);
+}
+
+function animation2() {
+  ball1.material.transparent = true;
+  ball1.material.opacity = 0.5;
+  ball1.material.color = new THREE.Color(Math.random() * 0xfffffff);
 }
