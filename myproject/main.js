@@ -28,13 +28,17 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
+camera.position.set(3, 5, 3);
+camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGLRenderer({
+  antialias: true,
   canvas: document.querySelector("#bg"),
 });
-
+renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
 
 document.body.appendChild(renderer.domElement);
 
