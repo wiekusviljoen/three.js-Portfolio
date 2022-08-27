@@ -67,9 +67,12 @@ const gridHelper = new THREE.GridHelper(200, 50);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 scene.add(torus);
-torus.position.z = -70;
-torus.position.setY(+20);
+
 torus.rotateX(-250);
+
+torus.position.z = +450;
+torus.position.setY(+13);
+torus.position.setX(-600);
 
 //Star
 function addStar() {
@@ -160,9 +163,9 @@ const saturn = new THREE.Mesh(
 );
 
 scene.add(saturn);
-
-saturn.position.z = -70;
-saturn.position.setY(+20);
+saturn.position.z = +450;
+saturn.position.setY(+13);
+saturn.position.setX(-600);
 
 //venus
 
@@ -177,8 +180,9 @@ const venus = new THREE.Mesh(
 
 scene.add(venus);
 
-venus.position.z = 40;
-venus.position.setY(+5);
+venus.position.z = +350;
+
+venus.position.setY(+10);
 
 //mercury
 
@@ -193,8 +197,8 @@ const mercury = new THREE.Mesh(
 
 scene.add(mercury);
 
-mercury.position.z = 80;
-mercury.position.setX(-0);
+mercury.position.z = 200;
+mercury.position.setX(-100);
 
 //mars
 
@@ -209,8 +213,9 @@ const mars = new THREE.Mesh(
 
 scene.add(mars);
 
-mars.position.z = -20;
+mars.position.z = +150;
 mars.position.setY(+13);
+mars.position.setX(230);
 
 //jupiter
 
@@ -333,7 +338,7 @@ player4.setFromObject(player3);
 const ball1Texture = new THREE.TextureLoader().load("deathstar.jpg");
 
 const ball1 = new THREE.Mesh(
-  new THREE.SphereGeometry(1),
+  new THREE.SphereGeometry(0.5),
   new THREE.MeshPhongMaterial({ map: ball1Texture })
 );
 
