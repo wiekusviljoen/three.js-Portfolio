@@ -8,31 +8,31 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.x -= 1;
-  } else if (e.keyCode === 39) {
-    camera.position.x += 1;
-  } else if (e.keyCode === 38) {
     camera.position.z -= 1;
-  } else if (e.keyCode === 40) {
+  } else if (e.keyCode === 39) {
     camera.position.z += 1;
+  } else if (e.keyCode === 38) {
+    camera.position.x += 1;
+  } else if (e.keyCode === 40) {
+    camera.position.x -= 1;
   } else if (e.keyCode === 32) {
-    camera.position.y -= 1;
-  } else if (e.keyCode === 13) {
     camera.position.y += 1;
+  } else if (e.keyCode === 13) {
+    camera.position.y -= 1;
   }
 };
 
 const scene = new THREE.Scene();
 //camera
 const camera = new THREE.PerspectiveCamera(
-  45,
+  20,
   window.innerWidth / window.innerHeight,
-  0.1,
-  5000
+  0.5,
+  50000
 );
-camera.position.y = 1000;
-camera.position.z = 0;
-camera.position.x = 0;
+camera.position.setY(+10);
+camera.position.z = +5;
+camera.position.x = +110;
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
