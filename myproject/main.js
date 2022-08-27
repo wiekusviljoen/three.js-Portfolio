@@ -3,8 +3,6 @@ import "./style.css";
 import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { LoopRepeat } from "three";
-import { meshgrid } from "@tensorflow/tfjs";
 
 //model animation
 
@@ -83,9 +81,9 @@ scene.add(torus);
 
 torus.rotateX(-250);
 
-torus.position.z = +450;
+torus.position.z = -450;
 torus.position.setY(+13);
-torus.position.setX(-600);
+torus.position.setX(+600);
 
 //Star
 function addStar() {
@@ -121,7 +119,7 @@ const earth = new THREE.Mesh(
 scene.add(earth);
 
 earth.position.setY(+10);
-earth.position.z = +8;
+earth.position.z = +100;
 
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
@@ -162,9 +160,6 @@ const sun = new THREE.Mesh(
 
 scene.add(sun);
 
-sun.position.z = 200;
-sun.position.setX(-0);
-
 function sunAnimate() {
   requestAnimationFrame(sunAnimate);
 
@@ -188,9 +183,9 @@ const saturn = new THREE.Mesh(
 );
 
 scene.add(saturn);
-saturn.position.z = +450;
+saturn.position.z = -450;
 saturn.position.setY(+13);
-saturn.position.setX(-600);
+saturn.position.setX(+600);
 
 //venus
 
@@ -217,7 +212,7 @@ venusAnimate();
 
 scene.add(venus);
 
-venus.position.z = +350;
+venus.position.z = -100;
 
 //mercury
 
@@ -244,8 +239,8 @@ mercuryAnimate();
 
 scene.add(mercury);
 
-mercury.position.z = 200;
-mercury.position.setX(-100);
+mercury.position.z = 50;
+mercury.position.setX(+100);
 
 //mars
 
@@ -274,7 +269,7 @@ scene.add(mars);
 
 mars.position.z = +150;
 
-mars.position.setX(230);
+mars.position.setX(-50);
 
 //jupiter
 
@@ -301,9 +296,9 @@ jupiterAnimate();
 
 scene.add(jupiter);
 
-jupiter.position.z = +500;
+jupiter.position.z = -150;
 jupiter.position.setY(+17);
-jupiter.position.setX(+100);
+jupiter.position.setX(-100);
 
 //Uranus
 
@@ -330,9 +325,9 @@ uranusAnimate();
 
 scene.add(uranus);
 
-uranus.position.z = 100;
+uranus.position.z = -100;
 uranus.position.setY(+25);
-uranus.position.setX(+1000);
+uranus.position.setX(-1000);
 //neptune
 
 const neptuneTexture = new THREE.TextureLoader().load("neptune.jpg");
@@ -358,8 +353,8 @@ neptuneAnimate();
 
 scene.add(neptune);
 
-neptune.position.z = -1000;
-neptune.position.setY(+30);
+neptune.position.z = +5000;
+neptune.position.setY(+800);
 
 //pluto
 
