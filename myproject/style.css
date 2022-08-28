@@ -69,11 +69,11 @@ canvas {
   }
 
   blockquote p {
-    color: black;
-    background-color: white;
-    font-size: 4rem;
+  
+    background: var(--dark-bg);
+    font-size: 1.5rem;
     display: inline;
-    line-height: 1;
+   
   }
 
   .left {
