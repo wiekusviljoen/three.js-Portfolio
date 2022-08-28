@@ -774,3 +774,21 @@ function ring9Animate() {
 ring9Animate();
 
 scene.add(ring9);
+
+//debree
+
+function addStar2() {
+  const geometry = new THREE.SphereGeometry(0.1, 34, 34);
+  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const star2 = new THREE.Mesh(geometry, material);
+
+  const [x, y, z] = Array(3)
+    .fill()
+    .map(() => THREE.MathUtils.randFloatSpread(150));
+
+  star2.position.set(x, y, z);
+
+  scene.add(star2);
+}
+
+Array(100).fill().forEach(addStar2);
