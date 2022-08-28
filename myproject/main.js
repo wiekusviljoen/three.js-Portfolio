@@ -8,13 +8,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    animate2();
-  } else if (e.keyCode === 39) {
-    camera.position.z -= 1;
-  } else if (e.keyCode === 38) {
     camera.position.x -= 1;
-  } else if (e.keyCode === 40) {
+  } else if (e.keyCode === 39) {
     camera.position.x += 1;
+  } else if (e.keyCode === 38) {
+    camera.position.z -= 1;
+  } else if (e.keyCode === 40) {
+    camera.position.z += 1;
   } else if (e.keyCode === 32) {
     camera.position.y += 1;
   } else if (e.keyCode === 13) {
@@ -31,9 +31,9 @@ const camera = new THREE.PerspectiveCamera(
   0.5,
   50000
 );
-camera.position.setY(-3);
-camera.position.z = 160;
-camera.position.x = +5;
+camera.position.setY(-20);
+camera.position.z = 165;
+camera.position.x = +30;
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -69,12 +69,12 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate1() {
   requestAnimationFrame(animate1);
-  scene.rotation.y += 0.0001;
+  scene.rotation.y += 0.0005;
   controls.update();
 
   renderer.render(scene, camera);
 }
-animate1(scene);
+//animate1(scene);
 
 window.requestAnimationFrame(animate1);
 
@@ -84,8 +84,8 @@ scene.add(torus);
 
 function animate2() {
   requestAnimationFrame(animate2);
-  camera.position.z += 0.05;
-  camera.position.y += 0.001;
+  camera.position.z += 0.15;
+  camera.position.y += 0.08;
   controls.update();
 
   renderer.render(scene, camera);
@@ -110,7 +110,7 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(1000));
+    .map(() => THREE.MathUtils.randFloatSpread(500));
 
   star.position.set(x, y, z);
   scene.add(star);
@@ -141,7 +141,7 @@ earth.position.z = +150;
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
 
-  earth.rotation.y += 0.008;
+  earth.rotation.y += 0.03;
 
   controls.update();
 
@@ -162,9 +162,9 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = +180;
+moon.position.z = +200;
 moon.position.setY(-1);
-moon.position.x = +5;
+moon.position.x = +20;
 
 //sun
 const sunTexture = new THREE.TextureLoader().load("sun.jpg");
