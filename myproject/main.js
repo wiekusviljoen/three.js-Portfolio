@@ -476,7 +476,7 @@ const satarm3 = new THREE.Mesh(
   })
 );
 satarm3.rotateY(-300);
-satarm3.rotateX(-500);
+satarm3.rotateX(-150);
 satarm3.rotateZ(-900.05);
 satarm3.position.set(+5, -5, +160);
 satarm3.castShadow = true;
