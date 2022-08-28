@@ -7,7 +7,12 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 //model animation
 
 document.onkeydown = function (e) {
-  if (e.keyCode === 37) {
+  if (e.keyCode === 32) {
+    scene.rotation.y -= 0.000005;
+    camera.position.z = +185;
+    camera.position.setY(-3);
+    camera.position.x = 0;
+  } else if (e.keyCode === 37) {
     camera.position.x -= 1;
   } else if (e.keyCode === 39) {
     camera.position.x += 1;
@@ -32,7 +37,7 @@ const camera = new THREE.PerspectiveCamera(
   50000
 );
 camera.position.setY(-20);
-camera.position.z = 165;
+camera.position.z = 168;
 camera.position.x = +30;
 
 const renderer = new THREE.WebGLRenderer({
@@ -69,7 +74,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate1() {
   requestAnimationFrame(animate1);
-  scene.rotation.y += 0.0005;
+  scene.rotation.y += 0.00001;
   controls.update();
 
   renderer.render(scene, camera);
@@ -86,6 +91,7 @@ function animate2() {
   requestAnimationFrame(animate2);
   camera.position.z += 0.15;
   camera.position.y += 0.08;
+  camera.position.x -= 0.15;
   controls.update();
 
   renderer.render(scene, camera);
@@ -110,7 +116,7 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(500));
+    .map(() => THREE.MathUtils.randFloatSpread(180));
 
   star.position.set(x, y, z);
   scene.add(star);
@@ -162,7 +168,7 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
-moon.position.z = +200;
+moon.position.z = +400;
 moon.position.setY(-1);
 moon.position.x = +20;
 
@@ -181,7 +187,7 @@ scene.add(sun);
 function sunAnimate() {
   requestAnimationFrame(sunAnimate);
 
-  sun.rotation.y -= 0.0002;
+  sun.rotation.y -= 0.002;
 
   controls.update();
 
