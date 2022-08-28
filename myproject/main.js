@@ -20,7 +20,7 @@ document.onkeydown = function (e) {
     camera.position.z -= 1;
   } else if (e.keyCode === 40) {
     camera.position.z += 1;
-  } else if (e.keyCode === 16) {
+  } else if (e.keyCode === 96) {
     camera.position.y += 1;
   } else if (e.keyCode === 13) {
     camera.position.y -= 1;
@@ -37,7 +37,7 @@ const camera = new THREE.PerspectiveCamera(
   50000
 );
 camera.position.setY(-20);
-camera.position.z = 168;
+camera.position.z = 300;
 camera.position.x = +30;
 
 const renderer = new THREE.WebGLRenderer({
@@ -90,7 +90,7 @@ scene.add(torus);
 function animate2() {
   requestAnimationFrame(animate2);
   camera.position.z += 0.2;
-  camera.position.y += 0.08;
+  camera.position.y += 0.2;
   camera.position.x -= 0.2;
   controls.update();
 
@@ -147,7 +147,7 @@ earth.position.z = +150;
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
 
-  earth.rotation.y += 0.05;
+  earth.rotation.y += 0.2;
 
   controls.update();
 
