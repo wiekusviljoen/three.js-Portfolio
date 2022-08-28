@@ -147,7 +147,7 @@ earth.position.z = +150;
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
 
-  earth.rotation.y += 0.03;
+  earth.rotation.y += 0.05;
 
   controls.update();
 
@@ -280,7 +280,7 @@ const mars = new THREE.Mesh(
 function marsAnimate() {
   requestAnimationFrame(marsAnimate);
 
-  mars.rotation.y += 0.01;
+  mars.rotation.y += 0.03;
 
   controls.update();
 
@@ -434,14 +434,14 @@ scene.add(player);
 const satarmTexture = new THREE.TextureLoader().load("solarpanel.jpg");
 
 const satarm = new THREE.Mesh(
-  new THREE.BoxGeometry(0.5, 3, 0),
+  new THREE.BoxGeometry(0.5, 1, 0),
   new THREE.MeshPhongMaterial({
     map: satarmTexture,
   })
 );
-satarm.rotateX(-500);
+satarm.rotateX(-300);
 satarm.rotateZ(-900.05);
-satarm.position.set(0, 0, +160);
+satarm.position.set(0, +2, +160);
 satarm.castShadow = true;
 satarm.receiveShadow = true;
 
@@ -452,7 +452,7 @@ scene.add(satarm);
 const satarm2Texture = new THREE.TextureLoader().load("solarpanel.jpg");
 
 const satarm2 = new THREE.Mesh(
-  new THREE.BoxGeometry(0.5, 3, 0),
+  new THREE.BoxGeometry(0.5, 1, 0),
   new THREE.MeshPhongMaterial({
     map: satarm2Texture,
   })
@@ -470,13 +470,13 @@ scene.add(satarm2);
 const satarm3Texture = new THREE.TextureLoader().load("solarpanel.jpg");
 
 const satarm3 = new THREE.Mesh(
-  new THREE.BoxGeometry(0.5, 3, 0),
+  new THREE.BoxGeometry(0.5, 1, 0),
   new THREE.MeshPhongMaterial({
     map: satarm3Texture,
   })
 );
-satarm3.rotateY(-50);
-satarm3.rotateX(-1000);
+satarm3.rotateY(-300);
+satarm3.rotateX(-500);
 satarm3.rotateZ(-900.05);
 satarm3.position.set(+5, -5, +160);
 satarm3.castShadow = true;
@@ -503,11 +503,11 @@ player4.setFromObject(player3);
 const ball1Texture = new THREE.TextureLoader().load("deathstar.jpg");
 
 const ball1 = new THREE.Mesh(
-  new THREE.SphereGeometry(0.2),
+  new THREE.SphereGeometry(0.05),
   new THREE.MeshPhongMaterial({ map: ball1Texture })
 );
 
-ball1.position.set(0, 0, +160);
+ball1.position.set(0, +2, +160);
 ball1.castShadow = true;
 ball1.receiveShadow = true;
 
@@ -520,7 +520,7 @@ scene.add(ball1);
 const ball2Texture = new THREE.TextureLoader().load("deathstar.jpg");
 
 const ball2 = new THREE.Mesh(
-  new THREE.SphereGeometry(0.2),
+  new THREE.SphereGeometry(0.05),
   new THREE.MeshPhongMaterial({ map: ball2Texture })
 );
 
@@ -537,7 +537,7 @@ scene.add(ball2);
 const ball3Texture = new THREE.TextureLoader().load("deathstar.jpg");
 
 const ball3 = new THREE.Mesh(
-  new THREE.SphereGeometry(0.2),
+  new THREE.SphereGeometry(0.05),
   new THREE.MeshPhongMaterial({ map: ball3Texture })
 );
 
