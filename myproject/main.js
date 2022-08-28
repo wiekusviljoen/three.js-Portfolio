@@ -784,11 +784,11 @@ function addStar2() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(150));
+    .map(() => THREE.MathUtils.randFloatSpread(500));
 
   star2.position.set(x, y, z);
 
   scene.add(star2);
 }
 
-Array(100).fill().forEach(addStar2);
+Array(300).fill().forEach(addStar2);
