@@ -89,9 +89,9 @@ scene.add(torus);
 
 function animate2() {
   requestAnimationFrame(animate2);
-  camera.position.z += 0.15;
+  camera.position.z += 0.2;
   camera.position.y += 0.08;
-  camera.position.x -= 0.15;
+  camera.position.x -= 0.2;
   controls.update();
 
   renderer.render(scene, camera);
