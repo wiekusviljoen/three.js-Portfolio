@@ -20,7 +20,7 @@ document.onkeydown = function (e) {
     camera.position.z -= 1;
   } else if (e.keyCode === 40) {
     camera.position.z += 1;
-  } else if (e.keyCode === 32) {
+  } else if (e.keyCode === 16) {
     camera.position.y += 1;
   } else if (e.keyCode === 13) {
     camera.position.y -= 1;
