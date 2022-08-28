@@ -8,7 +8,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 document.onkeydown = function (e) {
   if (e.keyCode === 37) {
-    camera.position.z += 1;
+    animate2();
   } else if (e.keyCode === 39) {
     camera.position.z -= 1;
   } else if (e.keyCode === 38) {
@@ -31,9 +31,9 @@ const camera = new THREE.PerspectiveCamera(
   0.5,
   50000
 );
-camera.position.setY(+30);
-camera.position.z = 300;
-camera.position.x = +150;
+camera.position.setY(-3);
+camera.position.z = 160;
+camera.position.x = +5;
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -69,7 +69,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate1() {
   requestAnimationFrame(animate1);
-  scene.rotation.y += 0.001;
+  scene.rotation.y += 0.0001;
   controls.update();
 
   renderer.render(scene, camera);
@@ -79,6 +79,22 @@ animate1(scene);
 window.requestAnimationFrame(animate1);
 
 scene.add(torus);
+
+//animate 2
+
+function animate2() {
+  requestAnimationFrame(animate2);
+  camera.position.z += 0.05;
+  camera.position.y += 0.001;
+  controls.update();
+
+  renderer.render(scene, camera);
+}
+animate2(scene);
+
+window.requestAnimationFrame(animate2);
+
+//torus
 
 torus.rotateX(-250);
 
@@ -125,7 +141,7 @@ earth.position.z = +150;
 function earthAnimate() {
   requestAnimationFrame(earthAnimate);
 
-  earth.rotation.y += 0.05;
+  earth.rotation.y += 0.008;
 
   controls.update();
 
@@ -165,7 +181,7 @@ scene.add(sun);
 function sunAnimate() {
   requestAnimationFrame(sunAnimate);
 
-  sun.rotation.y -= 0.002;
+  sun.rotation.y -= 0.0002;
 
   controls.update();
 
