@@ -425,6 +425,43 @@ satarm.receiveShadow = true;
 
 scene.add(satarm);
 
+//main sat arm
+
+const satarm2Texture = new THREE.TextureLoader().load("solarpanel.jpg");
+
+const satarm2 = new THREE.Mesh(
+  new THREE.BoxGeometry(0.5, 3, 0),
+  new THREE.MeshPhongMaterial({
+    map: satarm2Texture,
+  })
+);
+satarm2.rotateX(-500);
+satarm2.rotateZ(-900.05);
+satarm2.position.set(0, -5, +143);
+satarm2.castShadow = true;
+satarm2.receiveShadow = true;
+
+scene.add(satarm2);
+
+//satarm 3
+
+const satarm3Texture = new THREE.TextureLoader().load("solarpanel.jpg");
+
+const satarm3 = new THREE.Mesh(
+  new THREE.BoxGeometry(0.5, 3, 0),
+  new THREE.MeshPhongMaterial({
+    map: satarm3Texture,
+  })
+);
+satarm3.rotateY(-50);
+satarm3.rotateX(-1000);
+satarm3.rotateZ(-900.05);
+satarm3.position.set(+5, -5, +160);
+satarm3.castShadow = true;
+satarm3.receiveShadow = true;
+
+scene.add(satarm3);
+
 //playermain
 
 const player3 = new THREE.Mesh(
@@ -455,6 +492,40 @@ ball1.receiveShadow = true;
 let ball1BB = new THREE.Sphere(ball1.position, 1);
 
 scene.add(ball1);
+
+//satelite ball 2
+
+const ball2Texture = new THREE.TextureLoader().load("deathstar.jpg");
+
+const ball2 = new THREE.Mesh(
+  new THREE.SphereGeometry(0.2),
+  new THREE.MeshPhongMaterial({ map: ball2Texture })
+);
+
+ball2.position.set(0, -5, +143);
+ball2.castShadow = true;
+ball2.receiveShadow = true;
+
+let ball2BB = new THREE.Sphere(ball2.position, 1);
+
+scene.add(ball2);
+
+//satball 3
+
+const ball3Texture = new THREE.TextureLoader().load("deathstar.jpg");
+
+const ball3 = new THREE.Mesh(
+  new THREE.SphereGeometry(0.2),
+  new THREE.MeshPhongMaterial({ map: ball3Texture })
+);
+
+ball3.position.set(+5, -5, +160);
+ball3.castShadow = true;
+ball3.receiveShadow = true;
+
+let ball3BB = new THREE.Sphere(ball3.position, 1);
+
+scene.add(ball3);
 
 // animate balls and blocks
 
